@@ -1,0 +1,43 @@
+{
+  "canisters": {
+    "dbank": {
+      "main": "src/dbank/main.mo",
+      "type": "motoko"
+    },
+"__Candid_UI": {
+    "type": "custom",
+    "candid": "src/declarations/__Candid_UI/__Candid_UI.did",
+    "wasm": "src/declarations/__Candid_UI/__Candid_UI.wasm"
+  },
+
+
+
+    "dbank_assets": {
+      "dependencies": [
+        "dbank"
+      ],
+      "frontend": {
+        "entrypoint": "src/dbank_assets/src/index.html"
+      },
+      "source": [
+        "src/dbank_assets/assets",
+        "dist/dbank_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.9.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
